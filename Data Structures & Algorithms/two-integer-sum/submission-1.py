@@ -1,0 +1,16 @@
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        # li=[]
+        # for i in range(len(nums)):
+        #     for j in range(i+1,len(nums)):
+        #         if(nums[i]+nums[j] ==target):
+        #             li.append(i)
+        #             li.append(j)
+        # return li
+        sample_d={}
+        for key,value in enumerate(nums):
+            remaining=target-value
+            if(remaining in sample_d):
+                return[sample_d[remaining],key]
+            sample_d[value] = key
+                    
